@@ -1,0 +1,144 @@
+body {
+    background-image: linear-gradient 
+    (135deg, #667eea 0%, #764ba2 100%);
+    background-color: #07837b;
+    overflow: hidden;
+  }
+
+/*light show*/
+.background {
+	background-color: #333;
+	background-image:
+		linear-gradient(to bottom, #000, transparent, #000),
+		linear-gradient(to right, #322, #332, #232, #233, #223, #323, #322);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+.background:before, .background:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+}
+.background:after {
+	background-image:
+		radial-gradient(circle, #999, #000, #000, #000),
+		linear-gradient(to right, #900, #990, #090, #099, #009, #909, #900);
+	background-blend-mode: color-dodge, normal;
+	background-size: 200px 200px, 100vw;
+	-webkit-mask-image: repeating-linear-gradient(to right, transparent, #fff, transparent, transparent, #fff, transparent);
+	-webkit-mask-size: 75vw 100vh;
+	mask-image: repeating-linear-gradient(to right, transparent, transparent, #fff, transparent, transparent, #fff, transparent);
+	mask-size: 75vw 100vh;
+	height: 1000%;
+	width: 300%;
+	margin-left: -100%;
+	mix-blend-mode: color-dodge;
+	transform: rotate(-15deg);
+	transform-origin: top left;
+	animation: rays 30s infinite linear, bg 60s infinite linear;
+}
+@keyframes bg {
+	0% { background-position: left top, 0vw top; }
+	100% { background-position: left top, 100vw top; }
+}
+@keyframes rays {
+	0% {
+		-webkit-mask-position: 0vw top;
+		mask-position: 0vw top;
+	}
+	100% {
+		-webkit-mask-position: 100% top;
+		mask-position: 100% top;
+	}
+}
+/*light show*/
+
+
+/*fireworks */
+
+
+
+
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    z-index: 1;
+  }
+  .book {
+    position: relative;
+    border-radius: 10px;
+    width: 420px;
+    height: 600px;
+    background-image: url('kitten.jpg');
+    z-index: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+   }
+  .cover {
+    top: 0;
+    position: absolute;
+    background-color: lightgray;
+    background-color: #4158D0;
+    background-image: url(card.jpeg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 1;
+    -webkit-transform: rotatey(-85deg);
+    -ms-transform: rotatey(-85deg);
+    transform: rotatey(-85deg);
+  }
